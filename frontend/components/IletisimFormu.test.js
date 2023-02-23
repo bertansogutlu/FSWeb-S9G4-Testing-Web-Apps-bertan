@@ -3,9 +3,10 @@ import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import IletisimFormu from './IletisimFormu';
+import App from '../App'
 
 test('hata olmadan render ediliyor', () => {
-
+    render(<App />);
 });
 
 test('iletişim formu headerı render ediliyor', () => {
