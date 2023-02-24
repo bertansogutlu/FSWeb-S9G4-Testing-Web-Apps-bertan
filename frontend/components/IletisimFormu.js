@@ -70,7 +70,7 @@ const IletisimFormu = () => {
 
   return (
     <div className="App">
-      <h1>İletişim Formu</h1>
+      <h1 data-testid="header-h1">İletişim Formu</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="ad">Ad*</label>
@@ -80,6 +80,7 @@ const IletisimFormu = () => {
             value={form.ad}
             id="ad"
             placeholder="İlhan"
+            data-testid="input-name"
           />
           {(errors.ad) && <p data-testid="error">Hata: {errors.ad}</p>}
         </div>
@@ -92,6 +93,7 @@ const IletisimFormu = () => {
             name="soyad"
             value={form.soyad}
             placeholder="Mansız"
+            data-testid="input-surname"
           />
           {(errors.soyad) && <p data-testid="error">Hata: {errors.soyad}</p>}
         </div>
@@ -104,6 +106,7 @@ const IletisimFormu = () => {
             name="email"
             value={form.email}
             placeholder="yüzyılıngolcüsü@hotmail.com"
+            data-testid="input-email"
           />
           {(errors.email) && <p data-testid="error">Hata: {errors.email}</p>}
         </div>
@@ -115,13 +118,14 @@ const IletisimFormu = () => {
             name="mesaj"
             id="mesaj"
             value={form.mesaj}
+            data-testid="input-message"
           />
           {(errors.mesaj) && <p data-testid="error">Error: {errors.mesaj}</p>}
         </div>
 
         {displayData && <Goruntule form={form}/>}
 
-        <button>Gönder</button>
+        <button data-testid="submit">Gönder</button>
       </form>
     </div>
   );
